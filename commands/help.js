@@ -39,7 +39,7 @@ module.exports = {
   Discord Music Bot Version: v${require("../package.json").version}
   [✨ Support Server](${
     client.config.SupportServer
-  }) | [GitHub](https://github.com/SudhanPlayz/Discord-MusicBot) | By [SudhanPlayz](https://github.com/SudhanPlayz)`);
+  }) | [support bot](https://discord.com/api/oauth2/authorize?client_id=755849945684246579&permissions=8&redirect_uri=https%3A%2F%2Fdiscord.gg%2FXpuNszK&scope=bot) | By [baba alfa✔️](https://instabio.cc/babaalfa)`);
     if (!args[0]) message.channel.send(Embed);
     else {
       let cmd =
