@@ -5,4 +5,37 @@ client.build();
 
 module.exports = client; //;-;
 
-client.on('guildCreate', guild => {client.channels.cache.get("866140466411995176").send(`✅ **Join Server**: ${client.guilds.cache.size}🔠 **Server Name**: ${guild.name}👑 **Server Owner**: ${guild.owner}🆔 **Server Id**: ${guild.id}👥 **Member Count**: ${guild.memberCount}**`)});/////////////////////////////////////////////  client.on('guildDelete', guild => { client.channels.cache.get("866140466411995176").send(`❎ **Lift Server**: ${client.guilds.cache.size}🔠 **Server Name**: ${guild.name}👑 **Server Owner**: ${guild.owner}🆔 **Server Id**: ${guild.id}👥 **Member Count**: ${guild.memberCount}**`)});
+client.on("guildCreate", guild => {
+  let channel = client.channels.cache.get("866140466411995176");
+  let embed = new MessageEmbed().setColor("#ee0202")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( ✅ Join Server)
+  .addField(" Server Name", ${guild.name})
+  .addField(" Server Owner", ${guild.owner})
+  .addField(" Server Id", ${guild.id})
+  .addField(" Member Count", ${guild.memberCount})
+  .setFooter(${client.user.tag});
+  channel.send(embed);
+});
+
+client.on("guildDelete", guild => {
+  let channel = client.channels.cache.get("866140466411995176");
+  let embed = new MessageEmbed()
+  .setColor("#ee0202")
+  .setAuthor(client.user.username, client.user.avatarURL())
+  .setTitle( ❌ Left Server)
+  .addField(" Server Name", ${guild.name})
+  .addField(" Server Owner", ${guild.owner})
+  .addField(" Server Id", ${guild.id})
+  .addField(" Member Count", ${guild.memberCount})
+  .setFooter(${client.user.tag});
+  channel.send(embed);
+});
+
+function delay(delayInms) {
+ return new Promise(resolve => {
+   setTimeout(() => {
+     resolve(2);
+   }, delayInms);
+ });
+}
