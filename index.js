@@ -32,10 +32,3 @@ client.on("guildDelete", guild => {
   channel.send(embed);
 });
 
-function delay(delayInms) {
- return new Promise(resolve => {
-   setTimeout(() => {
-     resolve(2);
-   }, delayInms);
- });
-}
